@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 function GitHubIcon() {
   return (
     <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current" aria-hidden="true">
@@ -17,8 +19,18 @@ function MailIcon() {
 export default function Profile() {
   return (
     <section id="profile">
-      <div className="bg-white rounded-lg shadow-lg p-12">
-        <div className="text-base py-4 max-w-2xl mx-auto">
+      <div className="bg-white rounded-lg shadow-lg py-12 pl-6 pr-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-center py-4">
+          <div className="flex justify-center">
+            <Image
+              src="/プロフィール写真.jpeg"
+              alt="Kotaro Nakajima"
+              width={480}
+              height={480}
+              className="rounded-full object-cover w-80 h-80"
+            />
+          </div>
+          <div className="text-base">
             <h2 className="text-3xl font-bold text-gray-900 mb-8">Kotaro Nakajima</h2>
             <div className="mb-5 space-y-1">
               <div className="text-gray-700 leading-relaxed font-semibold"><span className="font-semibold">大阪公立大学大学院 情報科学研究科 修士1年</span></div>
@@ -45,6 +57,7 @@ export default function Profile() {
                 Mail
               </a>
             </div>
+          </div>
         </div>
       </div>
     </section>
