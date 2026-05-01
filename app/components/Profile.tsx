@@ -18,31 +18,18 @@ export default function Profile() {
   return (
     <section id="profile">
       <div className="bg-white rounded-lg shadow-lg p-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start py-4">
-          <div className="flex justify-center pt-2">
-            <div className="w-40 h-40 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white text-3xl font-bold select-none">
-              NK
+        <div className="text-base py-4 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">Kotaro Nakajima</h2>
+            <div className="mb-5 space-y-1">
+              <div className="text-gray-700 leading-relaxed font-semibold"><span className="font-semibold">大阪公立大学大学院 情報科学研究科 修士1年</span></div>
+              <div className="text-gray-700 leading-relaxed font-semibold"><span className="font-semibold">2004年3月生まれ</span></div>
+              <div className="text-gray-700 leading-relaxed font-semibold"><span className="font-semibold">出身：</span>福井県</div>
+              <div className="text-gray-700 leading-relaxed font-semibold"><span className="font-semibold">分野：</span>機械学習（モバイルコンピューティング、センシング）、Web系</div>
+              <div className="text-gray-700 leading-relaxed font-semibold"><span className="font-semibold">趣味：</span>野球、お笑い鑑賞、サウナ</div>
             </div>
-          </div>
-          <div className="md:col-span-2">
-            <h2 className="text-3xl font-bold text-gray-900 mb-1">中嶋 康太郎</h2>
-            <p className="text-gray-400 tracking-widest text-sm mb-1">Nakajima Kotaro</p>
-            <p className="text-blue-600 font-medium text-sm mb-5">大阪公立大学大学院 / 情報工学専攻</p>
-            <p className="text-gray-700 leading-relaxed mb-3">
-              大阪公立大学大学院 システム情報科学研究科に在籍しています。
-              専攻は情報工学で、主にモバイルセンシングと交通安全を組み合わせた研究に取り組んでいます。
-            </p>
-            <p className="text-gray-700 leading-relaxed mb-3">
-              普段はバックエンド（Python / FastAPI）とフロントエンド（React / Next.js）を中心に開発しており、
-              データ収集・分析・可視化まで一貫して扱うことが得意です。
-            </p>
-            <p className="text-gray-700 leading-relaxed mb-6">
-              ハッカソンや学内プロジェクトを通じてチーム開発の経験を積んでいます。
-              新しい技術を積極的にキャッチアップしながら、社会課題の解決につながるプロダクトを作ることに興味があります。
-            </p>
             <div className="flex gap-3">
               <a
-                href="https://github.com/your-username"
+                href="https://github.com/naka03193282"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition text-sm font-medium"
@@ -51,14 +38,13 @@ export default function Profile() {
                 GitHub
               </a>
               <a
-                href="mailto:nakaji319@icloud.com"
+                href="mailto:nakakou3282@gmail.com"
                 className="inline-flex items-center gap-2 border border-gray-300 text-gray-700 px-5 py-2 rounded-lg hover:border-blue-600 hover:text-blue-600 transition text-sm font-medium"
               >
                 <MailIcon />
                 Mail
               </a>
             </div>
-          </div>
         </div>
       </div>
     </section>
