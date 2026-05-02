@@ -35,7 +35,7 @@ const works: Work[] = [
     category: "#Web Application",
     title: "ショッピングコロシアム",
     shortDesc:
-      "日常の買い物で迷った時、価値観の異なる複数のAIがそれぞれの立場から議論し、ユーザの意思決定を助けるアプリです。コスパ重視・品質重視・トレンド重視など多角的な視点でアドバイスを提供します。議論のプロセスをリアルタイムで可視化することで、「なぜその選択が良いのか」を直感的に理解できるUXを目指しました。",
+      "日常の買い物で迷った時、価値観の異なる複数のAIがそれぞれの立場から議論し、ユーザの意思決定を助けるアプリです。コスパ重視・品質重視・トレンド重視など異なるペルソナを持つAIが意見を出し合うことで、ユーザは多角的な視点から商品を比較検討できます。",
     fullDesc:
       "日常の買い物で迷った時、価値観の異なる複数のAIがそれぞれの立場から議論し、ユーザの意思決定を助けるアプリです。コスパ重視・品質重視・トレンド重視など異なるペルソナを持つAIが意見を出し合うことで、ユーザは多角的な視点から商品を比較検討できます。LLMを活用したマルチエージェント構成で実装しており、議論の過程も可視化することで「なぜその選択が良いのか」を直感的に理解できるUXを目指しました。",
     tags: ["AI", "LLM", "マルチエージェント", "意思決定支援"],
@@ -95,41 +95,75 @@ export default function Works() {
           onClick={() => setSelected(null)}
         >
           <div
-            className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full overflow-hidden relative"
+            className="bg-white rounded-3xl shadow-2xl max-w-7xl w-full overflow-hidden relative max-h-[98vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               type="button"
               onClick={() => setSelected(null)}
               aria-label="閉じる"
-              className="absolute top-4 right-4 z-10 bg-white/80 hover:bg-white rounded-full w-9 h-9 flex items-center justify-center shadow transition-colors"
+              className="absolute top-6 right-6 z-10 bg-red-500 hover:bg-red-600 rounded-lg w-10 h-10 flex items-center justify-center shadow-lg transition-colors"
             >
-              <svg className="w-5 h-5 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+              <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={3}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            {selected.image ? (
-              <div className="w-full h-72 relative">
-                <Image src={selected.image} alt={selected.title} fill className="object-cover object-top" />
+            
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-10">
+              {/* 左側：メインコンテンツ */}
+              <div className="lg:col-span-2 space-y-6">
+                <div>
+                  <h3 className="text-sm font-medium text-gray-500 mb-2">Project</h3>
+                  <h2 className="text-4xl font-bold text-gray-900 mb-4">{selected.title}</h2>
+                  <div className="flex items-center gap-3 mb-6">
+                    <span className="text-5xl">{selected.emoji}</span>
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 className="text-sm font-semibold text-gray-700 mb-2">Description</h4>
+                  <p className="text-gray-700 leading-relaxed">{selected.fullDesc}</p>
+                </div>
+                
+                <div>
+                  <h4 className="text-sm font-semibold text-gray-700 mb-3">Tools</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {selected.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-4 py-2 rounded-lg bg-gray-200 text-gray-700 text-sm font-medium"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
-            ) : (
-              <div className={`w-full h-72 bg-gradient-to-br ${selected.gradient} flex items-center justify-center`}>
-                <span className="text-9xl opacity-60 select-none">{selected.emoji}</span>
-              </div>
-            )}
-            <div className="p-12">
-              <p className="text-blue-500 text-sm font-medium mb-1">{selected.category}</p>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">{selected.title}</h3>
-              <p className="text-gray-700 leading-relaxed mb-6">{selected.fullDesc}</p>
-              <div className="flex flex-wrap gap-2">
-                {selected.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-sm font-medium"
-                  >
-                    {tag}
-                  </span>
-                ))}
+              
+              {/* 右側：追加情報 */}
+              <div className="space-y-6">
+                {selected.image && (
+                  <div className="bg-gray-50 rounded-2xl p-4 -ml-4">
+                    <h4 className="text-sm font-semibold text-gray-700 mb-3">Preview</h4>
+                    <div className="w-full h-64 relative rounded-lg overflow-hidden">
+                      <Image src={selected.image} alt={selected.title} fill className="object-cover object-top" />
+                    </div>
+                  </div>
+                )}
+                
+                <div className="bg-gray-50 rounded-2xl p-6">
+                  <h4 className="text-sm font-semibold text-gray-700 mb-3">Details</h4>
+                  <div className="space-y-2 text-sm">
+                    <div>
+                      <span className="text-gray-500">Category:</span>
+                      <span className="ml-2 text-gray-700 font-medium">{selected.category}</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-500">制作時期:</span>
+                      <span className="ml-2 text-gray-700 font-medium">2025年</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
