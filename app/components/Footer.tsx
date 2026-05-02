@@ -5,21 +5,21 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <p className="text-lg font-semibold text-white">Kotaro Nakajima</p>
-            <p className="text-sm text-gray-400 mt-1">大阪公立大学大学院 / 情報工学専攻</p>
+            <p className="text-sm text-gray-400 mt-1">大阪公立大学大学院 情報科学研究科 修士1年</p>
           </div>
           <div className="flex items-center gap-8 text-base">
             <a
-              href="https://github.com/your-username"
+              href="https://github.com/naka03193282"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition"
             >
               GitHub
             </a>
-            <a href="mailto:nakaji319@icloud.com" className="text-gray-400 hover:text-white transition">
+            <a href="mailto:nakakou3282@gmail.com" className="text-gray-400 hover:text-white transition">
               Mail
             </a>
-            <span className="text-gray-500 text-sm">© 2025 Nakajima Kotaro</span>
+            <span className="text-gray-500 text-sm">＠ 2025 Nakajima Kotaro</span>
           </div>
         </div>
       </div>
