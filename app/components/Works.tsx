@@ -74,7 +74,7 @@ export default function Works() {
               <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
                 {work.title}
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed line-clamp-4 flex-1">{work.shortDesc}</p>
+              <p className="text-gray-600 text-sm leading-relaxed line-clamp-6 flex-1">{work.shortDesc}</p>
               <div className="flex justify-end mt-3">
                 <span className="inline-flex items-center gap-1 text-blue-500 text-sm font-medium group-hover:text-blue-700 transition-colors">
                   もっと見る
@@ -109,9 +109,9 @@ export default function Works() {
               </svg>
             </button>
             
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-10">
+            <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-8 pt-10 px-10 pb-4">
               {/* 左側：メインコンテンツ */}
-              <div className="lg:col-span-2 space-y-6">
+              <div className="space-y-6">
                 <div>
                   <h3 className="text-sm font-medium text-gray-500 mb-2">Project</h3>
                   <h2 className="text-4xl font-bold text-gray-900 mb-4">{selected.title}</h2>
