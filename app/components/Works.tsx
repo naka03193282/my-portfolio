@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 type Work = {
@@ -11,6 +12,7 @@ type Work = {
   tags: string[];
   gradient: string;
   emoji: string;
+  image?: string;
 };
 
 const works: Work[] = [
@@ -25,6 +27,7 @@ const works: Work[] = [
     tags: ["AI", "LLM", "マルチエージェント", "意思決定支援"],
     gradient: "from-violet-400 via-purple-400 to-indigo-500",
     emoji: "🛒",
+    image: "/ショッピングコロシアム.png",
   },
   {
     id: 2,
@@ -37,6 +40,7 @@ const works: Work[] = [
     tags: ["参加型センシング", "地図可視化", "安全支援", "Python", "Next.js"],
     gradient: "from-emerald-400 via-teal-400 to-cyan-500",
     emoji: "🚲",
+    image: "/自転車webアプリ.png",
   },
 ];
 
@@ -45,10 +49,9 @@ export default function Works() {
 
   return (
     <section id="works">
-      <h2 className="text-3xl font-bold text-gray-900 mb-8 underline decoration-2 underline-offset-8">
-        Works
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div className="bg-white rounded-lg shadow-lg p-12">
+        <h2 className="text-3xl font-bold text-gray-900 mb-10 border-b-2 border-gray-200 pb-4">Works</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {works.map((work) => (
           <button
             key={work.id}
@@ -56,11 +59,15 @@ export default function Works() {
             onClick={() => setSelected(work)}
             className="text-left bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-200 cursor-pointer group"
           >
-            <div
-              className={`w-full h-52 bg-gradient-to-br ${work.gradient} flex items-center justify-center`}
-            >
-              <span className="text-8xl opacity-60 select-none">{work.emoji}</span>
-            </div>
+            {work.image ? (
+              <div className="w-full h-52 relative">
+                <Image src={work.image} alt={work.title} fill className="object-cover object-top" />
+              </div>
+            ) : (
+              <div className={`w-full h-52 bg-gradient-to-br ${work.gradient} flex items-center justify-center`}>
+                <span className="text-8xl opacity-60 select-none">{work.emoji}</span>
+              </div>
+            )}
             <div className="p-6">
               <p className="text-blue-500 text-sm font-medium mb-1">{work.category}</p>
               <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
@@ -70,6 +77,7 @@ export default function Works() {
             </div>
           </button>
         ))}
+        </div>
       </div>
 
       {selected && (
@@ -81,11 +89,15 @@ export default function Works() {
             className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            <div
-              className={`w-full h-72 bg-gradient-to-br ${selected.gradient} flex items-center justify-center`}
-            >
-              <span className="text-9xl opacity-60 select-none">{selected.emoji}</span>
-            </div>
+            {selected.image ? (
+              <div className="w-full h-72 relative">
+                <Image src={selected.image} alt={selected.title} fill className="object-cover object-top" />
+              </div>
+            ) : (
+              <div className={`w-full h-72 bg-gradient-to-br ${selected.gradient} flex items-center justify-center`}>
+                <span className="text-9xl opacity-60 select-none">{selected.emoji}</span>
+              </div>
+            )}
             <div className="p-12">
               <div className="flex items-start justify-between mb-1">
                 <p className="text-blue-500 text-sm font-medium">{selected.category}</p>
