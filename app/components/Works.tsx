@@ -50,7 +50,7 @@ export default function Works() {
 
   return (
     <section id="works">
-      <div className="bg-white rounded-lg shadow-lg p-12">
+      <div className="bg-white rounded-lg shadow-lg p-6 sm:p-12">
         <h2 className="text-3xl font-bold text-gray-900 mb-10 border-b-2 border-gray-200 pb-4">Works</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {works.map((work) => (
@@ -95,26 +95,26 @@ export default function Works() {
           onClick={() => setSelected(null)}
         >
           <div
-            className="bg-white rounded-3xl shadow-2xl max-w-7xl w-full overflow-hidden relative max-h-[98vh] overflow-y-auto"
+            className="bg-white rounded-3xl shadow-2xl max-w-7xl w-full overflow-hidden relative max-h-[95vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               type="button"
               onClick={() => setSelected(null)}
               aria-label="閉じる"
-              className="absolute top-6 right-6 z-10 bg-red-500 hover:bg-red-600 rounded-lg w-10 h-10 flex items-center justify-center shadow-lg transition-colors"
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 z-10 bg-red-500 hover:bg-red-600 rounded-lg w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center shadow-lg transition-colors"
             >
-              <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={3}>
+              <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={3}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-8 pt-10 px-10 pb-4">
+
+            <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-6 sm:gap-8 pt-8 px-5 pb-6 sm:pt-10 sm:px-10 sm:pb-4">
               {/* 左側：メインコンテンツ */}
               <div className="space-y-6">
                 <div>
                   <h3 className="text-sm font-medium text-gray-500 mb-2">Project</h3>
-                  <h2 className="text-4xl font-bold text-gray-900 mb-4">{selected.title}</h2>
+                  <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-4">{selected.title}</h2>
                   <div className="flex items-center gap-3 mb-6">
                     <span className="text-5xl">{selected.emoji}</span>
                   </div>
@@ -143,7 +143,7 @@ export default function Works() {
               {/* 右側：追加情報 */}
               <div className="space-y-6">
                 {selected.image && (
-                  <div className="bg-gray-50 rounded-2xl p-4 -ml-4">
+                  <div className="bg-gray-50 rounded-2xl p-4 sm:-ml-4">
                     <h4 className="text-sm font-semibold text-gray-700 mb-3">Preview</h4>
                     <div className="w-full h-64 relative rounded-lg overflow-hidden">
                       <Image src={selected.image} alt={selected.title} fill className="object-cover object-top" />

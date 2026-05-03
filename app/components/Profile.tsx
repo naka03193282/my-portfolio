@@ -19,24 +19,24 @@ function MailIcon() {
 export default function Profile() {
   return (
     <section id="profile">
-      <div className="bg-white rounded-lg shadow-lg py-12 px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-center py-4">
+      <div className="bg-white rounded-lg shadow-lg py-8 px-6 sm:py-12 sm:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0 items-center py-4">
           <div className="flex justify-center">
             <Image
               src="/プロフィール写真.jpeg"
               alt="Kotaro Nakajima"
               width={480}
               height={480}
-              className="rounded-full object-cover w-80 h-80"
+              className="rounded-full object-cover w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80"
             />
           </div>
           <div className="text-base">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">Kotaro Nakajima</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">Kotaro Nakajima</h2>
             <div className="mb-5 space-y-1">
               <div className="text-gray-700 leading-relaxed font-semibold">大阪公立大学大学院 情報科学研究科 修士1年</div>
               <div className="text-gray-700 leading-relaxed font-semibold">2004年3月生まれ</div>
               <div className="text-gray-700 leading-relaxed font-semibold"><span className="font-semibold">出身：</span>福井県</div>
-              <div className="text-gray-700 leading-relaxed font-semibold whitespace-nowrap"><span className="font-semibold">分野：</span>機械学習（モバイルコンピューティング、センシング）、Web系</div>
+              <div className="text-gray-700 leading-relaxed font-semibold"><span className="font-semibold">分野：</span>機械学習（モバイルコンピューティング、センシング）、Web系</div>
               <div className="text-gray-700 leading-relaxed font-semibold"><span className="font-semibold">趣味：</span>野球、お笑い鑑賞、サウナ</div>
             </div>
             <div className="flex gap-3">

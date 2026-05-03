@@ -16,7 +16,7 @@ const experiences = [
 export default function Research() {
   return (
     <section id="research">
-      <div className="bg-white rounded-lg shadow-lg p-12">
+      <div className="bg-white rounded-lg shadow-lg p-6 sm:p-12">
         <h2 className="text-3xl font-bold text-gray-900 mb-10 border-b-2 border-gray-200 pb-4">My Experience</h2>
         <div className="relative border-l-2 border-blue-200 ml-4 space-y-10">
           {experiences.map((exp, i) => (

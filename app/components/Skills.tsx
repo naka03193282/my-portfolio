@@ -13,7 +13,7 @@ const skills: { name: string; icon: string; label: ReactNode }[] = [
 export default function Skills() {
   return (
     <section id="skills">
-      <div className="bg-white rounded-lg shadow-lg p-12">
+      <div className="bg-white rounded-lg shadow-lg p-6 sm:p-12">
         <h2 className="text-3xl font-bold text-gray-900 mb-10 border-b-2 border-gray-200 pb-4">Skills</h2>
         <div className="flex flex-wrap gap-8 justify-center">
           {skills.map((skill) => (
